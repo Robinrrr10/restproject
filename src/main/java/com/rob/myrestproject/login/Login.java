@@ -1,5 +1,6 @@
 package com.rob.myrestproject.login;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -12,7 +13,8 @@ import com.rob.myrestproject.login.entry.LoginResponse;
 public class Login {
 
 	@POST
-	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
 	public LoginResponse doSignIn(LoginEntry loginEntry) {
 		LoginResponse loginResponse = new LoginResponse();
 		loginResponse.setName("Prabu");
